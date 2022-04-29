@@ -3,8 +3,8 @@ const profit = $("#profit");
 profit.css("background", `linear-gradient(94.78deg, #DF5950 0%, #451046 ${profit.val()/10000}%, #fff ${profit.val()/10000}%, white 100%)`);
 
 // Taimer
-const taimer = () => {    
-    let date = new Date(2022, 0, 01);
+const taimer = () => {
+    let date = new Date(2022, 12, 31);
     let now = new Date();
     gap = date - now;
     let day = Math.floor(gap / 1000 / 60 / 60 / 24);
@@ -17,19 +17,19 @@ const taimer = () => {
         $("#hours").text(hour);
         $("#minets").text(min);
         $("#seconds").text(sec);
-    } else {    
+    } else {
         $(".home__timer").html(alert);
     };
 }
 setInterval(taimer, 1000);
 
 // Login
-const log = () => {    
+const log = () => {
     $(".login").css("display", "block");
 };
 const sub = (event) => {
     event.preventDefault();
-    $(".login").css("display", "none");    
+    $(".login").css("display", "none");
 };
 $(".login__form").submit(sub);
 $(".home__login").click(log);
