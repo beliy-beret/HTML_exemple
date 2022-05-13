@@ -41,7 +41,7 @@ input[type=number]::-webkit-inner-spin-button {
     grid-template-rows: repeat(4, 1fr);
 }
 
-.actions {
+.operations {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -60,7 +60,7 @@ input[type=number]::-webkit-inner-spin-button {
     border-radius: 5px;
 }
 
-.btn-active {
+.active {
     box-shadow: none;
 }
 
