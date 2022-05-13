@@ -51,7 +51,7 @@ buttons.addEventListener('click', function (e){
   const activeButton = e.target;
   if(activeButton.classList.contains('number')){
     setInputValue(activeButton.dataset.value);
-  } else {
+  } else if(activeButton.classList.contains('operation')) {
     if(activeButton.dataset.value === '='){
       const result = calcResult();
       setInputValue(result);
@@ -60,5 +60,7 @@ buttons.addEventListener('click', function (e){
       setAction(activeButton.dataset.value);
       resetInputValue();
     }
+  } else if(activeButton.classList.contains('clear')){
+    resetInputValue();
   }
 })

@@ -70,10 +70,6 @@ input[type=number]::-webkit-inner-spin-button {
     border-radius: 5px;
 }
 
-.active {
-    box-shadow: none;
-}
-
 .btn:hover {
     cursor: pointer;
 }
