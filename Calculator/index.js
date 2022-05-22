@@ -47,11 +47,18 @@ function calcResult(){
   }
 }
 
+function togglePressedClass(element){
+  element.classList.toggle('pressed');
+}
+
 buttons.addEventListener('click', function (e){
   const activeButton = e.target;
+
   if(activeButton.classList.contains('number')){
-    setInputValue(activeButton.dataset.value);
-  } else if(activeButton.classList.contains('operation')) {
+     return setInputValue(activeButton.dataset.value);
+  }
+
+  if(activeButton.classList.contains('operation')) {
     if(activeButton.dataset.value === '='){
       const result = calcResult();
       setInputValue(result);
@@ -59,8 +66,19 @@ buttons.addEventListener('click', function (e){
       setArgument_1();
       setAction(activeButton.dataset.value);
       resetInputValue();
+      return;
     }
-  } else if(activeButton.classList.contains('clear')){
-    resetInputValue();
   }
+
+  if(activeButton.classList.contains('clear')){
+    return resetInputValue();
+  }
+})
+
+buttons.addEventListener('mousedown', function(e){
+  togglePressedClass(e.target);
+})
+
+buttons.addEventListener('mouseup', function(e){
+  togglePressedClass(e.target);
 })
